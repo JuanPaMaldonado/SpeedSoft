@@ -12,6 +12,6 @@ get '/jugar' do
 end
 
 get '/:x/:y' do
-	@@game.marcarPosicion(params["x"].to_i, params["y"].to_i) 
+	@@game.marcarPosicion(params["x"].to_i, params["y"].to_i)  
 	erb :jugar
 end
