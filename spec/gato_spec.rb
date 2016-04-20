@@ -147,5 +147,9 @@ describe "Gato" do
 		resultado.should == "XOXOXOXOX"
 	end
 
+	it "Sin marca y se consulta una posicion" do
+		gato = Gato.new
+		gato.consultarPosicion(1,1).should == "p11"
+	end
 
 end

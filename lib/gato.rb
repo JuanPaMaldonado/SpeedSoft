@@ -1,8 +1,8 @@
 class Gato
 	def initialize
-		@fila1 = [" "," "," "]
-		@fila2 = [" "," "," "]
-		@fila3 = [" "," "," "]
+		@fila1 = ["p00","p01","p02"]
+		@fila2 = ["p10","p11","p12"]
+		@fila3 = ["p20","p21","p22"]
 		@marca = "X"
 	end
 

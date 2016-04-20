@@ -18,11 +18,13 @@ Scenario: Jugar X en 0,0
 	Given Voy al inicio
 	When Iniciar el juego
 		And Jugar Posicion 0,0
-	Then Tengo que ver "<a href="/0/0">p00</a>"
+	Then Tengo que ver "<a href="/0/0">X</a>"
 
-Scenario: Jugar X en 1,0
+Scenario: Jugar X en 1,0 y luego O en 1,1
 	Given Voy al inicio
 	When Iniciar el juego
 		And Jugar Posicion 1,0
-	Then Tengo que ver "<a href="/1/0">p10</a>"
+		And Jugar Posicion 1,1
+	Then Tengo que ver "<a href="/1/0">X</a>"
+		And Tengo que ver "<a href="/1/1">O</a>"
 
