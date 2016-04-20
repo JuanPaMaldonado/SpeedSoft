@@ -67,6 +67,7 @@ class Gato
 		if @fila1[2]==@fila2[1] and @fila2[1]==@fila3[0]
 			ganador = @fila1[2]
 		end
+
 		ganador
 	end
 
