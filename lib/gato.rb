@@ -38,4 +38,36 @@ class Gato
 		end
 		marcar
 	end
+
+	def consultaGanador
+		ganador = "Ninguno"
+		if @fila1[0]==@fila1[1] and @fila1[1]==@fila1[2]
+			ganador = @fila1[0]
+		end
+		if @fila2[0]==@fila2[1] and @fila2[1]==@fila2[2]
+			ganador = @fila2[0]
+		end
+		if @fila3[0]==@fila3[1] and @fila3[1]==@fila3[2]
+			ganador = @fila3[0]
+		end
+
+		if @fila1[0]==@fila2[0] and @fila2[0]==@fila3[0]
+			ganador = @fila1[0]
+		end
+		if @fila1[1]==@fila2[1] and @fila2[1]==@fila3[1]
+			ganador = @fila1[1]
+		end
+		if @fila1[2]==@fila2[2] and @fila2[2]==@fila3[2]
+			ganador = @fila1[2]
+		end
+
+		if @fila1[0]==@fila2[1] and @fila2[1]==@fila3[2]
+			ganador = @fila1[0]
+		end
+		if @fila1[2]==@fila2[1] and @fila2[1]==@fila3[0]
+			ganador = @fila1[2]
+		end
+		ganador
+	end
+
 end
