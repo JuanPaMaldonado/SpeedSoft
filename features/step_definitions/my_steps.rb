@@ -2,8 +2,16 @@ Given(/^Voy al inicio$/) do
   visit '/'
 end
 
+Given(/^Voy a jugar$/) do
+  visit '/jugar'
+end
+
 When(/^Iniciar el juego$/) do
 	click_link("Jugar")
+end
+
+When(/^Volver a jugar$/) do
+	click_link("Juego nuevo")
 end
 
 When(/^Jugar Posicion (\d+),(\d+)$/) do |arg1, arg2|
