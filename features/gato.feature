@@ -18,23 +18,23 @@ Scenario: Jugar X en 0,0
 	Given Voy al inicio
 	When Iniciar el juego
 		And Jugar Posicion 0,0
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p00' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 0,0 una "X"
 
 Scenario: Jugar X en 1,0 y luego O en 1,1
 	Given Voy al inicio
 	When Iniciar el juego
 		And Jugar Posicion 1,0
 		And Jugar Posicion 1,1
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p10' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p11' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 1,0 una "X"
+		And Tiene que aparecer en la posicion 1,1 una "O"
 
 Scenario: Jugar X en 1,1 y luego O en 1,2
 	Given Voy al inicio
 	When Iniciar el juego
 		And Jugar Posicion 1,1
 		And Jugar Posicion 1,2
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p11' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p12' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 1,1 una "X"
+		And Tiene que aparecer en la posicion 1,2 una "O"
 
 Scenario: Jugar X en 1,0 y luego O en 1,1 y Jugar X en 1,2
 	Given Voy al inicio
@@ -42,9 +42,9 @@ Scenario: Jugar X en 1,0 y luego O en 1,1 y Jugar X en 1,2
 		And Jugar Posicion 1,0
 		And Jugar Posicion 1,1
 		And Jugar Posicion 1,2
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p10' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p11' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p12' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 1,0 una "X"
+		And Tiene que aparecer en la posicion 1,1 una "O"
+		And Tiene que aparecer en la posicion 1,2 una "X"
 
 Scenario: Jugar X en 0,0 y luego O en 0,1 y Jugar X en 2,0 y Jugar O en 2,2
 	Given Voy al inicio
@@ -53,10 +53,10 @@ Scenario: Jugar X en 0,0 y luego O en 0,1 y Jugar X en 2,0 y Jugar O en 2,2
 		And Jugar Posicion 0,1
 		And Jugar Posicion 2,0
 		And Jugar Posicion 2,2
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p00' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p01' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p20' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p22' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 0,0 una "X"
+		And Tiene que aparecer en la posicion 0,1 una "O"
+		And Tiene que aparecer en la posicion 2,0 una "X"
+		And Tiene que aparecer en la posicion 2,2 una "O"
 
 Scenario: Ganador X -- Jugar X en 0,1 - 1,1 - 2,1
 	Given Voy al inicio
@@ -67,11 +67,11 @@ Scenario: Ganador X -- Jugar X en 0,1 - 1,1 - 2,1
 		And Jugar Posicion 0,2
 		And Jugar Posicion 2,1
 
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p01' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p00' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p11' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p02' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p21' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 0,1 una "X"
+		And Tiene que aparecer en la posicion 0,0 una "O"
+		And Tiene que aparecer en la posicion 1,1 una "X"
+		And Tiene que aparecer en la posicion 0,2 una "O"
+		And Tiene que aparecer en la posicion 2,1 una "X"
 
 		And Tengo que ver "Ganador: X"
 
@@ -85,12 +85,12 @@ Scenario: Ganador O -- Jugar O en 0,0 - 1,1 - 2,2
 		And Jugar Posicion 2,1
 		And Jugar Posicion 2,2
 
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p10' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p00' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p20' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p11' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p21' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p22' height='80' width='80'>"
+	Then Tiene que aparecer en la posicion 1,0 una "X"
+		And Tiene que aparecer en la posicion 0,0 una "O"
+		And Tiene que aparecer en la posicion 2,0 una "X"
+		And Tiene que aparecer en la posicion 1,1 una "O"
+		And Tiene que aparecer en la posicion 2,1 una "X"
+		And Tiene que aparecer en la posicion 2,2 una "O"
 
 		And Tengo que ver "Ganador: O"
 
@@ -107,14 +107,16 @@ Scenario: Juego completo sin ganador
 		And Jugar Posicion 2,0
 		And Jugar Posicion 2,1
 
-	Then Tengo que ver "<img src='../imgX.jpg' alt='p00' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p12' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p02' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p01' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p10' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p11' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p22' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgO.jpg' alt='p20' height='80' width='80'>"
-		And Tengo que ver "<img src='../imgX.jpg' alt='p21' height='80' width='80'>"
-
+	Then Tiene que aparecer en la posicion 0,0 una "X"
+		And Tiene que aparecer en la posicion 1,2 una "O"
+		And Tiene que aparecer en la posicion 0,2 una "X"
+		And Tiene que aparecer en la posicion 0,1 una "O"
+		And Tiene que aparecer en la posicion 1,0 una "X"
+		And Tiene que aparecer en la posicion 1,1 una "O"
+		And Tiene que aparecer en la posicion 2,2 una "X"
+		And Tiene que aparecer en la posicion 2,0 una "O"
+		And Tiene que aparecer en la posicion 2,1 una "X"
 		And Tengo que ver "Ganador: Ninguno"
+
+
+
