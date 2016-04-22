@@ -12,6 +12,10 @@ class Gato
 			return
 		end
 
+		if consultaGanador != "Ninguno"
+			return
+		end
+
 		if x==0
 			@fila1[y] = @marca
 		end

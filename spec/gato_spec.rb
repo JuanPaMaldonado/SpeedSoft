@@ -116,10 +116,10 @@ describe "Gato" do
 		resultado = "#{ resultado }#{ gato.consultarPosicion(1,1) }"
 		gato.marcarPosicion(1,2)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(1,2) }"
-		gato.marcarPosicion(2,0)
-		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
 		gato.marcarPosicion(2,1)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(2,1) }"
+		gato.marcarPosicion(2,0)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
 		resultado.should == "XOXOXOXO"
 	end
 
@@ -139,10 +139,10 @@ describe "Gato" do
 		resultado = "#{ resultado }#{ gato.consultarPosicion(1,1) }"
 		gato.marcarPosicion(1,2)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(1,2) }"
-		gato.marcarPosicion(2,0)
-		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
 		gato.marcarPosicion(2,1)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(2,1) }"
+		gato.marcarPosicion(2,0)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
 		gato.marcarPosicion(2,2)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(2,2) }"
 		resultado.should == "XOXOXOXOX"
@@ -163,10 +163,10 @@ describe "Gato" do
 		resultado = "#{ resultado }#{ gato.consultarPosicion(1,1) }"
 		gato.marcarPosicion(1,2)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(1,2) }"
-		gato.marcarPosicion(2,0)
-		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
 		gato.marcarPosicion(2,1)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(2,1) }"
+		gato.marcarPosicion(2,0)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
 		gato.marcarPosicion(2,2)
 		resultado = "#{ resultado }#{ gato.consultarPosicion(2,2) }"
 		resultado.should == "XOXOXOXOX"
