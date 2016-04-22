@@ -8,6 +8,10 @@ class Gato
 
 	def marcarPosicion x,y
 
+		if validaDisponibilidadPosicion(x,y) == false
+			return
+		end
+
 		if x==0
 			@fila1[y] = @marca
 		end
@@ -23,6 +27,21 @@ class Gato
 		else
 			@marca = "X"
 		end
+	end
+
+	def validaDisponibilidadPosicion x,y
+		disponible = true
+		if x==0 and (@fila1[y]=="X" or @fila1[y]=="O")
+			disponible = false
+		end
+		if x==1 and (@fila2[y]=="X" or @fila2[y]=="O")
+			disponible = false
+		end
+		if x==2 and (@fila3[y]=="X" or @fila3[y]=="O")
+			disponible = false
+		end
+
+		return disponible
 	end
 
 	def consultarPosicion x,y
