@@ -174,7 +174,7 @@ describe "Gato" do
 
 	it "Sin marca y se consulta una posicion" do
 		gato = Gato.new
-		gato.consultarPosicion(1,1).should == "p11"
+		gato.consultarPosicion(1,1).should == "B"
 	end
 
 	it "Si marco 2 veces la misma posicion, al consultar la posicion debe decir X" do

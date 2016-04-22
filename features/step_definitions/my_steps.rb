@@ -15,7 +15,7 @@ When(/^Volver a jugar$/) do
 end
 
 When(/^Jugar Posicion (\d+),(\d+)$/) do |arg1, arg2|
-	click_link("p#{arg1}#{arg2}")
+	click_link('<img src="../imgB.jpg" alt="p' + "#{arg1}#{arg2}" + '" height="80" width="80">')
 end
 
 Then(/^Tengo que ver "(.*?)"$/) do |arg1|

@@ -1,8 +1,8 @@
 class Gato
 	def initialize
-		@fila1 = ["p00","p01","p02"]
-		@fila2 = ["p10","p11","p12"]
-		@fila3 = ["p20","p21","p22"]
+		@fila1 = ["B","B","B"]
+		@fila2 = ["B","B","B"]
+		@fila3 = ["B","B","B"]
 		@marca = "X"
 	end
 
@@ -60,30 +60,30 @@ class Gato
 
 	def consultaGanador
 		ganador = "Ninguno"
-		if @fila1[0]==@fila1[1] and @fila1[1]==@fila1[2]
+		if @fila1[0]!="B" and @fila1[0]==@fila1[1] and @fila1[1]==@fila1[2]
 			ganador = @fila1[0]
 		end
-		if @fila2[0]==@fila2[1] and @fila2[1]==@fila2[2]
+		if @fila2[0]!="B" and @fila2[0]==@fila2[1] and @fila2[1]==@fila2[2]
 			ganador = @fila2[0]
 		end
-		if @fila3[0]==@fila3[1] and @fila3[1]==@fila3[2]
+		if @fila3[0]!="B" and @fila3[0]==@fila3[1] and @fila3[1]==@fila3[2]
 			ganador = @fila3[0]
 		end
 
-		if @fila1[0]==@fila2[0] and @fila2[0]==@fila3[0]
+		if @fila1[0]!="B" and @fila1[0]==@fila2[0] and @fila2[0]==@fila3[0]
 			ganador = @fila1[0]
 		end
-		if @fila1[1]==@fila2[1] and @fila2[1]==@fila3[1]
+		if @fila1[1]!="B" and @fila1[1]==@fila2[1] and @fila2[1]==@fila3[1]
 			ganador = @fila1[1]
 		end
-		if @fila1[2]==@fila2[2] and @fila2[2]==@fila3[2]
+		if @fila1[2]!="B" and @fila1[2]==@fila2[2] and @fila2[2]==@fila3[2]
 			ganador = @fila1[2]
 		end
 
-		if @fila1[0]==@fila2[1] and @fila2[1]==@fila3[2]
+		if @fila1[0]!="B" and @fila1[0]==@fila2[1] and @fila2[1]==@fila3[2]
 			ganador = @fila1[0]
 		end
-		if @fila1[2]==@fila2[1] and @fila2[1]==@fila3[0]
+		if @fila1[2]!="B" and @fila1[2]==@fila2[1] and @fila2[1]==@fila3[0]
 			ganador = @fila1[2]
 		end
 
