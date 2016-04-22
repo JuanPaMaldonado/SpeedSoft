@@ -166,4 +166,19 @@ describe "Gato" do
 		gato.consultarPosicion(1,1).should == "O"
 	end
 
+
+	it "Si marco 2 veces la misma posicion, al consultar la posicion debe decir X" do
+		gato = Gato.new
+		gato.marcarPosicion(1,0)
+		gato.marcarPosicion(1,0)
+		gato.consultarPosicion(1,0).should == "X"
+	end
+
+	it "Si marco uan segunda casilla 2 veces la misma posicion, al consultar la posicion debe decir O" do
+		gato = Gato.new
+		gato.marcarPosicion(1,0)
+		gato.marcarPosicion(2,1)
+		gato.consultarPosicion(2,1).should == "O"
+	end
+
 end
