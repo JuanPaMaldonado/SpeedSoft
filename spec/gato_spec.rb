@@ -2,6 +2,7 @@ require_relative "../lib/gato.rb"
 
 describe "Gato" do
 
+		
 	it "Si marco por primera vez, debe existir una X" do
 		gato = Gato.new
 		gato.marcarPosicion(1,1)
@@ -147,6 +148,30 @@ describe "Gato" do
 		resultado.should == "XOXOXOXOX"
 	end
 
+	it "Si marco por decima vez, debe existir cinco X y cuatro O" do
+		gato = Gato.new
+		resultado = ""
+		gato.marcarPosicion(0,0)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(0,0) }"
+		gato.marcarPosicion(0,1)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(0,1) }"
+		gato.marcarPosicion(0,2)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(0,2) }"
+		gato.marcarPosicion(1,0)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(1,0) }"
+		gato.marcarPosicion(1,1)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(1,1) }"
+		gato.marcarPosicion(1,2)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(1,2) }"
+		gato.marcarPosicion(2,0)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(2,0) }"
+		gato.marcarPosicion(2,1)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(2,1) }"
+		gato.marcarPosicion(2,2)
+		resultado = "#{ resultado }#{ gato.consultarPosicion(2,2) }"
+		resultado.should == "XOXOXOXOX"
+	end
+
 	it "Sin marca y se consulta una posicion" do
 		gato = Gato.new
 		gato.consultarPosicion(1,1).should == "p11"
@@ -159,7 +184,7 @@ describe "Gato" do
 		gato.consultarPosicion(0,0).should == "X"
 	end
 
-	it "Si marco uan segunda casilla 2 veces la misma posicion, al consultar la posicion debe decir O" do
+	it "Si marco una segunda casilla 2 veces la misma posicion, al consultar la posicion debe decir O" do
 		gato = Gato.new
 		gato.marcarPosicion(0,0)
 		gato.marcarPosicion(1,1)
@@ -174,11 +199,29 @@ describe "Gato" do
 		gato.consultarPosicion(1,0).should == "X"
 	end
 
-	it "Si marco uan segunda casilla 2 veces la misma posicion, al consultar la posicion debe decir O" do
+	it "Si marco una segunda casilla 2 veces la misma posicion, al consultar la posicion debe decir O" do
 		gato = Gato.new
 		gato.marcarPosicion(1,0)
 		gato.marcarPosicion(2,1)
 		gato.consultarPosicion(2,1).should == "O"
 	end
+
+	it "Si marco 3 veces la misma posicion, al consultar la posicion debe decir X" do
+		gato = Gato.new
+		gato.marcarPosicion(1,0)
+		gato.marcarPosicion(1,0)
+		gato.marcarPosicion(1,0)
+		gato.consultarPosicion(1,0).should == "X"
+	end
+	
+	it "Si marco 4 veces la misma posicion, al consultar la posicion debe decir X" do
+		gato = Gato.new
+		gato.marcarPosicion(2,0)
+		gato.marcarPosicion(2,0)
+		gato.marcarPosicion(2,0)
+		gato.consultarPosicion(2,0).should == "X"
+	end
+	
+	
 
 end
